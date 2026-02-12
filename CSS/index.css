@@ -1,0 +1,756 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&family=Oswald&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --primary-color: rgb(245, 186, 196);
+    --secondary-color: rgb(155, 120, 126);
+    --fontPunchline-color: rgb(243, 172, 184);
+    --fontHover-color: white;
+    --background-color: whitesmoke;
+    --boxShadow-color: rgba(59, 43, 43, 0.12);;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: 0px;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding: var(--scroll-padding, 5rem);
+    container-type: scroll-state;
+    container-name: page;
+}
+
+/*****************ScrollBar Change Color*****************/
+::-webkit-scrollbar{
+    width: 0.9rem;
+    background-color: rgb(34, 40, 49);
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    transition: .5s;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    border: 1px solid var(--box-shadow);
+    background-color: var(--secondary-color);
+}
+
+
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    background-color: var(--background-color);
+}
+/******************** Navigation *********************/
+body nav{
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary-color);
+    z-index: 10;
+}
+/* body nav .logo{
+    font-family: "Roboto Condensed", sans-serif;
+    width: 10%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 200px;
+    transition: .5s ease;
+    border: 1px solid red;
+}
+body nav .logo:hover{
+    transform: scale(1.05);
+}
+body nav .logo h1{
+    font-size: 3rem;
+    color: white;
+}
+body nav .logo h3{
+    color: var(--secondary-color);
+} */
+
+body nav.scrolled{
+    box-shadow: 0px 1px 20px black;
+}
+body nav ul{
+    position: absolute;
+    width: 20%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+body nav ul li{
+    cursor: pointer;
+    font-family: "Roboto Condensed", sans-serif;
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    list-style: none;
+}
+body nav ul li:hover{
+    color: var(--fontHover-color);
+}
+body nav .ham-menu{
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 30px;
+    right: 100px;
+    display: none;
+}
+body nav .ham-menu span{
+    height: 5px;
+    width: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+body nav .ham-menu span:nth-child(1){
+    top: 20%;
+}
+body nav .ham-menu span:nth-child(3){
+    top: 80%;
+}
+body nav .ham-menu.active span:nth-child(1){
+    transform: translate(-50%, -50%) rotate(45deg);
+    top: 50%;
+}body nav .ham-menu.active span:nth-child(2){
+    opacity: 0;
+}
+body nav .ham-menu.active span:nth-child(3){
+    transform: translate(-50%, -50%) rotate(-45deg);
+    top: 50%;
+}
+
+
+/******************** Header *********************/
+
+header{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 150px;
+    gap: 40px;
+    /* border: 1px solid red; */
+}
+
+header .punchline{
+    width: 40%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+header .punchline h1{
+    color: var(--fontPunchline-color);
+    font-size: 3.8rem;
+    font-family: "Roboto Condensed", sans-serif;
+    margin-top: 200px;
+}
+header .punchline h3{
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+header .videoheader{
+    width: 40%;
+    height: 700px;
+    padding: 50px;
+    /* border: 1px solid red; */
+}
+header .videoheader .video-clip{
+    width: 100%;
+    height: 100%;
+    border: none;
+    /* border-radius: 10px; */
+    object-fit: cover;
+    box-shadow: 0px 1px 20px 1px black;
+    z-index: -1;
+}
+/******************** Main*********************/
+main{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 150px;
+    gap: 40px;
+    /* border: 1px solid red; */
+}
+main h1{
+    color: var(--secondary-color);
+    font-size: 3.5rem;
+    font-family: "Roboto Condensed", sans-serif;
+    text-align: center;
+}
+main #product-items{
+    width: 80%;
+    height: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    overflow-y: scroll;
+    /* overflow: hidden; */
+    padding-bottom: 50px;
+    /* border: 1px solid red; */
+}
+
+main #product-items .prodbox{
+    width: 20%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0px 1px 10x 5px var(--boxShadow-color);
+    transform: translateY(5px);
+    transition: .5s ease;
+}
+main #product-items .prodbox:hover{
+    transform: translateY(0px);
+    box-shadow: 0px 1px 20px 1px black;
+}
+main #product-items .prodbox img{
+    cursor: pointer;
+    width: 300px;
+    height: 300px;
+    transition: .5s ease;
+}
+main #product-items .prodbox img:hover{
+    transform: scale(1.05);
+}
+main #product-items .prodbox .details{
+    width: 90%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+main #product-items .prodbox .details h2{
+    color: var(--fontPunchline-color);
+    font-size: 1.3rem;
+    font-family: "Roboto Condensed", sans-serif;
+    text-align: center;
+}
+
+/******************** Main Contant Us*********************/
+main #contactus{
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    margin-bottom: 50px;
+    /* border: 1px solid red; */
+}
+main #contactus h1{
+    margin-bottom: 50px;
+}
+main #contactus .details{
+    width: 50%;
+    height: 700px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    background-color: var(--secondary-color);
+    /* border: 1px solid red; */
+    transition: .5s ease;
+}
+main #contactus .details:hover{
+    box-shadow: 0px 1px 20px 1px black;
+}
+main #contactus .details .message{
+    width: 80%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* border: 1px solid red; */
+}
+main #contactus .details .message .contactdetails{
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* border: 1px solid red; */
+}
+main #contactus .details .message .contactdetails .address{
+    width: 45%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    /* align-items: center; */
+}
+main #contactus .details .message .contactdetails .address:hover{
+    background-color: var(--background-color);
+}
+main #contactus .details .message .contactdetails .address .wrap-address{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+main #contactus .details .message .contactdetails .address .wrap-address i{
+    color: var(--secondary-color);
+    font-size: 2rem;
+}
+main #contactus .details .message .contactdetails .address .wrap-address h2{
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    font-family: "Roboto Condensed", sans-serif;
+}
+main #contactus .details .message .contactdetails .phonenumber{
+    width: 45%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    /* align-items: center; */
+}
+main #contactus .details .message .contactdetails .phonenumber:hover{
+    background-color: var(--background-color);
+}
+main #contactus .details .message .contactdetails .phonenumber .wrap-number{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+main #contactus .details .message .contactdetails .phonenumber .wrap-number i{
+    color: var(--secondary-color);
+    font-size: 2rem;
+}
+main #contactus .details .message .contactdetails .phonenumber .wrap-number h2{
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    font-family: "Roboto Condensed", sans-serif;
+}
+main #contactus .details .message .message-wrap{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    /* border: 1px solid red; */
+}
+main #contactus .details .message .message-wrap h3{
+    font-size: 2rem;
+    font-family: "Roboto Condensed", sans-serif;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+main #contactus .details .message .message-wrap input{
+    height: 40px;
+    padding-left: 10px;
+    border: none;
+    border-radius: 5px;
+}
+main #contactus .details .message .message-wrap textarea{
+    border-radius: 5px;
+}
+main #contactus .details .message .message-wrap button{
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+}
+main #contactus .details .message .message-wrap button:hover{
+    color: var(--fontHover-color);
+}
+
+
+
+/******************** Footer *********************/
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer p{
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+}
+
+
+/*****************Responsive Media Query*****************/
+
+/******Desktop Extra Large Screen ViewSize******/
+@media (max-width: 1640px){
+    /* body nav .logo h1{
+        font-size: 2.5rem;
+    } */
+
+    body nav ul{
+        gap: 30px;
+    }
+
+    /******************** Header *********************/
+    header{
+        gap: 0px;
+    }
+    header .punchline{
+        width: 50%;
+        height: 600px;
+    }
+    header .punchline h1{
+        font-size: 3.5rem;
+    }
+    header .punchline h3{
+        font-size: 2.5rem;
+    }
+    header .videoheader{
+        width: 40%;
+        height: 600px;
+    }
+
+    /******************** Main*********************/
+    main{
+        padding-top: 80px;
+    }
+    main h1{
+        font-size: 3rem;
+    }
+    main #product-items{
+        width: 90%;
+        padding-top: 20px;
+    }
+
+    main #product-items .prodbox{
+        width: 25%;
+    }
+
+}
+/******Desktop Screen ViewSize******/
+@media (max-width: 1240px){
+    body nav ul{
+        width: 40%;
+    }
+
+    /******************** Header *********************/
+    main #product-items .prodbox{
+        width: 30%;
+    }
+}
+/******Laptop Screen ViewSize******/
+@media (max-width: 1080px){
+    body nav ul{
+        position: absolute;
+        width: 100%;
+        height: 300px;
+        background-color: var(--secondary-color);
+        flex-direction: column;
+        top: 80px;
+        overflow: hidden;
+    }
+    body nav ul li{
+        color: var(--primary-color);
+    }
+
+     body nav .ham-menu{
+        display: block;
+    }
+
+    /******************** Header *********************/
+    header{
+        padding-top: 100px;
+    }
+    header .punchline{
+        width: 80%;
+        height: 200px;
+    }
+    header .punchline h1{
+        font-size: 3.5rem;
+        margin-top: 50px;
+    }
+    header .punchline h3{
+        font-size: 2.5rem;
+    }
+    header .videoheader{
+        width: 70%;
+    }
+
+    /******************** Main*********************/
+    main h1{
+        font-size: 2.5rem;
+    }
+    main #product-items{
+        width: 100%;
+    }
+
+    main #product-items .prodbox{
+        width: 35%;
+    }
+
+    /******************** Main Contant Us*********************/
+    main #contactus{
+        height: 900px;
+        /* border: 1px solid red; */
+    }
+    main #contactus .details{
+        width: 60%;
+        height: 800px;
+    }
+    main #contactus .details .message{
+        width: 80%;
+        height: 650px;
+        /* border: 1px solid red; */
+    }
+    main #contactus .details .message .contactdetails{
+        height: 400px;
+        flex-wrap: wrap;
+        gap: 0px;
+        /* border: 1px solid red; */
+    }
+    main #contactus .details .message .contactdetails .address{
+        width: 80%;
+    }
+    main #contactus .details .message .contactdetails .phonenumber{
+        width: 80%;
+    }
+
+
+    /******************** Footer *********************/
+    footer p{
+        font-size: 1.3rem;
+    }
+}
+/******Mobile/Tablet Screen ViewSize******/
+@media (max-width: 780px){
+    body nav{
+        height: 80px;
+    }
+
+    body nav button{
+        top: 0px;
+        right: 50px;
+    }
+
+    /******************** Header *********************/
+    header{
+        padding-top: 100px;
+    }
+    header .punchline{
+        width: 90%;
+        height: 150px;
+    }
+    header .punchline h1{
+        font-size: 2.5rem;
+    }
+    header .punchline h3{
+        font-size: 1.8rem;
+    }
+    header .videoheader{
+        height: 350px;
+    }
+
+    /******************** Main*********************/
+    main{
+        padding-top: 50px;
+    }
+    main h1{
+        font-size: 2rem;
+    }
+    main #product-items{
+        width: 100%;
+    }
+
+    main #product-items .prodbox{
+        width: 80%;
+    }
+    main #product-items .prodbox img{
+        width: 350px;
+        height: 340px;
+    }
+    main #product-items .prodbox .details h2{
+        font-size: 1.5rem;
+    }
+
+    /******************** Main Contant Us*********************/
+    main #contactus .details{
+        width: 90%;
+    }
+    main #contactus .details .message{
+        width: 90%;
+    }
+    main #contactus .details .message .contactdetails .address{
+        width: 90%;
+    }
+    main #contactus .details .message .contactdetails .phonenumber{
+        width: 90%;
+    }
+
+    main #contactus .details .message .message-wrap h3{
+        font-size: 1.8rem;
+    }
+}
+/******Mobile Screen ViewSize******/
+@media (max-width: 480px){
+
+    /******************** Header *********************/
+    header .punchline{
+        width: 90%;
+        height: 100px;
+    }
+    header .punchline h1{
+        font-size: 2rem;
+        margin-top: 50px;
+    }
+    header .punchline h3{
+        font-size: 1.5rem;
+    }
+    header .videoheader{
+        height: 250px;
+    }
+
+    /******************** Main*********************/
+    main{
+        padding-top: 30px;
+    }
+    main h1{
+        font-size: 1.8rem;
+    }
+    main #product-items{
+        width: 100%;
+    }
+
+    main #product-items .prodbox{
+        width: 60%;
+        height: 350px;
+    }
+    main #product-items .prodbox img{
+        width: 260px;
+        height: 260px;
+    }
+    main #product-items .prodbox .details h2{
+        font-size: 1.5rem;
+    }
+
+    /******************** Main Contant Us*********************/
+    main #contactus .details{
+        width: 80%;
+    }
+
+    main #contactus .details .message .message-wrap h3{
+        font-size: 1.3rem;
+    }
+
+    
+
+    /******************** Footer *********************/
+    footer p{
+        font-size: 1rem;
+    }
+}
+/******Mobile Extra Small Screen ViewSize******/
+@media (max-width: 360px){
+
+    /******************** Header *********************/
+    header{
+        padding-top: 50px;
+        gap: 40px;
+    }
+    header .punchline{
+        width: 90%;
+        height: 200px;
+        text-align: center;
+    }
+    header .punchline h1{
+        font-size: 3rem;
+    }
+    header .punchline h3{
+        font-size: 2rem;
+    }
+    main #product-items .prodbox{
+        width: 60%;
+        height: 300px;
+    }
+    header .videoheader{
+        width: 400px;
+        height: 250px;
+
+    }
+
+    /******************** Main*********************/
+    main #product-items .prodbox .details h2{
+        font-size: 1.5rem;
+    }
+
+    main #contactus .details .message .contactdetails .address .wrap-address i{
+        font-size: 1.8rem;
+    }
+    main #contactus .details .message .contactdetails .address .wrap-address h2{
+        font-size: 1rem;
+    }
+
+    main #contactus .details .message .contactdetails .phonenumber .wrap-number i{
+        font-size: 1.8rem;
+    }
+    main #contactus .details .message .contactdetails .phonenumber .wrap-number h2{
+        font-size: 1rem;
+    }
+
+    /******************** Footer *********************/
+    footer p{
+        font-size: .8rem;
+    }
+}

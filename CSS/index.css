@@ -43,10 +43,12 @@ html{
 
 
 body{
-    display: flex;
-    flex-direction: column;
-    align-items: center ;
     background-color: var(--background-color);
+    /* background-image: url('../files/bg/spingklebg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover; */
 }
 /******************** Navigation *********************/
 body nav{
@@ -58,39 +60,28 @@ body nav{
     background-color: var(--primary-color);
     z-index: 10;
 }
-/* body nav .logo{
-    font-family: "Roboto Condensed", sans-serif;
-    width: 10%;
+body nav img{
+    width: 250px;
     height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     position: absolute;
     left: 200px;
     transition: .5s ease;
-    border: 1px solid red;
 }
-body nav .logo:hover{
+body nav img:hover{
     transform: scale(1.05);
 }
-body nav .logo h1{
-    font-size: 3rem;
-    color: white;
-}
-body nav .logo h3{
-    color: var(--secondary-color);
-} */
+
 
 body nav.scrolled{
     box-shadow: 0px 1px 20px black;
 }
 body nav ul{
     position: absolute;
-    width: 20%;
+    width: 30%;
     height: 100px;
+    /* top: 50px; */
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     justify-content: center;
     align-items: center;
     gap: 40px;
@@ -105,6 +96,7 @@ body nav ul li{
 body nav ul li:hover{
     color: var(--fontHover-color);
 }
+
 body nav .ham-menu{
     cursor: pointer;
     height: 30px;
@@ -140,6 +132,22 @@ body nav .ham-menu.active span:nth-child(1){
 body nav .ham-menu.active span:nth-child(3){
     transform: translate(-50%, -50%) rotate(-45deg);
     top: 50%;
+}
+
+body nav .socialmedia{
+    width: 150px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 200px;
+    /* border: 1px solid red; */
+}
+body nav .socialmedia i{
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--secondary-color);
 }
 
 
@@ -200,6 +208,7 @@ main{
     justify-content: center;
     align-items: center;
     padding-top: 150px;
+    padding: 10px;
     gap: 40px;
     /* border: 1px solid red; */
 }
@@ -218,7 +227,6 @@ main #product-items{
     align-items: center;
     gap: 20px;
     overflow-y: scroll;
-    /* overflow: hidden; */
     padding-bottom: 50px;
     /* border: 1px solid red; */
 }
@@ -290,11 +298,9 @@ main #contactus .details{
     align-items: center;
     gap: 100px;
     background-color: var(--secondary-color);
+    box-shadow: 0px 1px 20px 1px black;
     /* border: 1px solid red; */
     transition: .5s ease;
-}
-main #contactus .details:hover{
-    box-shadow: 0px 1px 20px 1px black;
 }
 main #contactus .details .message{
     width: 80%;
@@ -347,6 +353,10 @@ main #contactus .details .message .contactdetails .address .wrap-address h2{
     font-size: 1.2rem;
     font-family: "Roboto Condensed", sans-serif;
 }
+main #contactus .details .message .contactdetails .address .wrap-address h2 a{
+    text-decoration: none;
+    color: var(--secondary-color);
+}
 main #contactus .details .message .contactdetails .phonenumber{
     width: 45%;
     height: 100px;
@@ -377,6 +387,10 @@ main #contactus .details .message .contactdetails .phonenumber .wrap-number h2{
     font-size: 1.2rem;
     font-family: "Roboto Condensed", sans-serif;
 }
+main #contactus .details .message .contactdetails .phonenumber .wrap-number h2 a{
+    text-decoration: none;
+    color: var(--secondary-color);
+}
 main #contactus .details .message .message-wrap{
     width: 100%;
     height: 400px;
@@ -394,13 +408,25 @@ main #contactus .details .message .message-wrap h3{
     margin-bottom: 20px;
 }
 main #contactus .details .message .message-wrap input{
+    color: var(--secondary-color);
+    font-size: 1rem;
     height: 40px;
     padding-left: 10px;
     border: none;
     border-radius: 5px;
 }
+main #contactus .details .message .message-wrap input:focus{
+    outline: 2px solid var(--primary-color);
+}
 main #contactus .details .message .message-wrap textarea{
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    padding: 10px;
     border-radius: 5px;
+    border: none;
+}
+main #contactus .details .message .message-wrap textarea:focus{
+    outline: 2px solid var(--primary-color);
 }
 main #contactus .details .message .message-wrap button{
     cursor: pointer;
@@ -482,8 +508,17 @@ footer p{
 }
 /******Desktop Screen ViewSize******/
 @media (max-width: 1240px){
+
+    body nav img{
+        left: 80px;
+    }
+
     body nav ul{
         width: 40%;
+    }
+
+    body nav .socialmedia{
+        right: 100px;
     }
 
     /******************** Header *********************/
@@ -493,22 +528,34 @@ footer p{
 }
 /******Laptop Screen ViewSize******/
 @media (max-width: 1080px){
+
+    body nav img{
+        width: 250px;
+        height: 100px;
+    }
+
     body nav ul{
         position: absolute;
         width: 100%;
         height: 300px;
         background-color: var(--secondary-color);
         flex-direction: column;
-        top: 80px;
+        top: 100px;
         overflow: hidden;
+        border: 1px solid red;
     }
     body nav ul li{
         color: var(--primary-color);
     }
 
-     body nav .ham-menu{
+    body nav .ham-menu{
+        right: 100px;
         display: block;
     }
+
+    body nav .socialmedia{
+    display: none;
+}
 
     /******************** Header *********************/
     header{
@@ -580,9 +627,19 @@ footer p{
         height: 80px;
     }
 
-    body nav button{
-        top: 0px;
+    body nav img{
+        width: 200px;
+        height: 90px;
+        left: 30px;
+    }
+
+    body nav ul{
+        top: 80px;
+    }
+
+    body nav .ham-menu{
         right: 50px;
+        display: block;
     }
 
     /******************** Header *********************/
@@ -671,6 +728,7 @@ footer p{
     }
     main #product-items{
         width: 100%;
+        overflow-y: hidden;
     }
 
     main #product-items .prodbox{
@@ -723,6 +781,10 @@ footer p{
     main #product-items .prodbox{
         width: 60%;
         height: 300px;
+    }
+    main #product-items .prodbox img{
+        width: 250px;
+        height: 250px;
     }
     header .videoheader{
         width: 400px;

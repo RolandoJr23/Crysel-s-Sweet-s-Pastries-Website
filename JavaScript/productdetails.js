@@ -30,6 +30,7 @@ function displayProductitems(){
             <img src="${product.imageProduct}"/>
             <div class="details"> 
                 <h2 class="productname">${product.productName}</h2>
+                <h3 class="price">${product.price}</h3>
             </div>
         `;
         productitems.appendChild(prod);

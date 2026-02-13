@@ -2,7 +2,7 @@
 const hamMenu = document.querySelector(".ham-menu");
 const togMenu = document.querySelector("ul");
 
-togMenu.style.maxHeight= "0px";
+togMenu.style.maxHeight = "0px";
 
 hamMenu.addEventListener("click", () => {
     hamMenu.classList.toggle("active");

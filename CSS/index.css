@@ -58,7 +58,7 @@ body nav{
     display: flex;
     justify-content: center;
     background-color: var(--primary-color);
-    z-index: 10;
+    z-index: 100;
 }
 body nav img{
     width: 250px;
@@ -76,10 +76,10 @@ body nav.scrolled{
     box-shadow: 0px 1px 20px black;
 }
 body nav ul{
-    position: absolute;
+    /* position: absolute; */
     width: 30%;
     height: 100px;
-    /* top: 50px; */
+    top: 50px;
     display: flex;
     /* flex-direction: row; */
     justify-content: center;
@@ -161,6 +161,7 @@ header{
     align-items: center;
     flex-direction: row;
     padding-top: 150px;
+    padding-bottom: 100px;
     gap: 40px;
     /* border: 1px solid red; */
 }
@@ -226,7 +227,7 @@ main #product-items{
     justify-content: center;
     align-items: center;
     gap: 20px;
-    overflow-y: scroll;
+    overflow-y: hidden;
     padding-bottom: 50px;
     /* border: 1px solid red; */
 }
@@ -242,12 +243,13 @@ main #product-items .prodbox{
     padding: 30px;
     background-color: white;
     box-shadow: 0px 1px 10x 5px var(--boxShadow-color);
+    /* border-radius: 10px; */
     transform: translateY(5px);
     transition: .5s ease;
 }
 main #product-items .prodbox:hover{
     transform: translateY(0px);
-    box-shadow: 0px 1px 20px 1px black;
+    box-shadow: 0px 1px 10px 1px black;
 }
 main #product-items .prodbox img{
     cursor: pointer;
@@ -262,13 +264,21 @@ main #product-items .prodbox .details{
     width: 90%;
     height: 100px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
     /* border: 1px solid red; */
 }
 main #product-items .prodbox .details h2{
     color: var(--fontPunchline-color);
     font-size: 1.3rem;
+    font-family: "Roboto Condensed", sans-serif;
+    text-align: center;
+}
+main #product-items .prodbox .details h3{
+    color: var(--secondary-color);
+    font-size: 2rem;
     font-family: "Roboto Condensed", sans-serif;
     text-align: center;
 }
@@ -298,7 +308,7 @@ main #contactus .details{
     align-items: center;
     gap: 100px;
     background-color: var(--secondary-color);
-    box-shadow: 0px 1px 20px 1px black;
+    /* box-shadow: 0px 1px 10px 1px black; */
     /* border: 1px solid red; */
     transition: .5s ease;
 }
@@ -499,6 +509,7 @@ footer p{
     main #product-items{
         width: 90%;
         padding-top: 20px;
+        overflow-y: scroll;
     }
 
     main #product-items .prodbox{
@@ -529,6 +540,12 @@ footer p{
 /******Laptop Screen ViewSize******/
 @media (max-width: 1080px){
 
+    /******************** Header *********************/
+
+    header{
+        padding-bottom: 0px;
+    }
+
     body nav img{
         width: 250px;
         height: 100px;
@@ -542,6 +559,7 @@ footer p{
         flex-direction: column;
         top: 100px;
         overflow: hidden;
+        /* z-index: -10; */
     }
     body nav ul li{
         color: var(--primary-color);
@@ -727,16 +745,15 @@ footer p{
     }
     main #product-items{
         width: 100%;
-        overflow-y: hidden;
     }
 
     main #product-items .prodbox{
         width: 60%;
-        height: 350px;
+        height: 300px;
     }
     main #product-items .prodbox img{
-        width: 260px;
-        height: 260px;
+        width: 230px;
+        height: 230px;
     }
     main #product-items .prodbox .details h2{
         font-size: 1.5rem;
@@ -779,12 +796,12 @@ footer p{
     }
     main #product-items .prodbox{
         width: 60%;
-        height: 300px;
+        height: 330px;
     }
-    main #product-items .prodbox img{
+    /* main #product-items .prodbox img{
         width: 250px;
         height: 250px;
-    }
+    } */
     header .videoheader{
         width: 400px;
         height: 250px;
